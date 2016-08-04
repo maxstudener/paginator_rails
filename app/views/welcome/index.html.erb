@@ -1,0 +1,46 @@
+
+<div class="container">
+
+  <ul class="list-group">
+    <% @data.each do |item| %>
+      <li class="list-group-item"><%= item.data %></li>
+    <% end %>
+  </ul>
+
+  <ul class="pagination">
+    <!-- if prev_pages.length > 0 && prev_pages.first != start_page && current_page != start_page" -->
+    <li>
+      <a class="pagelink" href="?page=<%= "start_page" %>"><%= "start_page" %></a>
+    </li>
+
+    <!-- if prev_pages.length > 0 && prev_pages.first > start_page + 1 -->
+    <li>
+      <a class="pagelink" href="?page=<%= "prev_pages.first - 1"%>">...</a>
+    </li>
+
+    <!-- page in prev_pages -->
+    <li>
+      <a class="pagelink" href="?page=<%= "prev_pages" %>"><%= "prev_pages" %></a>
+    </li>
+
+    <li class="active"><a href="#"><%= "current_page" %><span class="sr-only">(current)</span></a></li>
+
+    <!-- page in next_pages -->
+    <li>
+      <a class="pagelink" href="?page=<%= "next_pages" %>"><%= "next_pages" %></a>
+    </li>
+
+    <!-- if next_pages.length > 0 && next_pages[next_pages.length - 1] != number_of_pages -->
+    <li>
+      <a class="pagelink" href="?page=<%= "next_pages.last + 1"%>">...</a>
+    </li>
+
+    <!-- if next_pages.length > 0 && next_pages[next_pages.length - 1] != number_of_pages && current_page != number_of_pages -->
+    <li>
+      <a class="pagelink" href="?page=<%= "number_of_pages" %>"><%= "number_of_pages" %></a>
+    </li>
+
+  </ul>
+
+
+</div>
