@@ -23,6 +23,7 @@
       <a class="pagelink" href="?page=<%= "prev_pages" %>"><%= "prev_pages" %></a>
     </li>
 
+    <!-- if number_of_pages > 0 -->
     <li class="active"><a href="#"><%= "current_page" %><span class="sr-only">(current)</span></a></li>
 
     <!-- page in next_pages -->
@@ -30,7 +31,7 @@
       <a class="pagelink" href="?page=<%= "next_pages" %>"><%= "next_pages" %></a>
     </li>
 
-    <!-- if next_pages.length > 0 && next_pages[next_pages.length - 1] != number_of_pages -->
+    <!-- if next_pages.length > 0 && next_pages[next_pages.length - 1] != number_of_pages && && next_pages.last + 1 != number_of_pages -->
     <li>
       <a class="pagelink" href="?page=<%= "next_pages.last + 1"%>">...</a>
     </li>
